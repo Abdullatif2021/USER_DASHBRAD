@@ -1,0 +1,22 @@
+<div class="pagination">
+  <span
+    (click)="goToPrevious()"
+    class="page-link"
+    [class.disabled]="currentPage === 1"
+    >«</span
+  >
+  <span
+    *ngFor="let page of pages"
+    (click)="goToPage(page)"
+    class="page-link"
+    [class.active]="currentPage === page"
+  >
+    {{ page }}
+  </span>
+  <span
+    (click)="goToNext()"
+    class="page-link"
+    [class.disabled]="currentPage === totalPages"
+    >»</span
+  >
+</div>

@@ -1,0 +1,22 @@
+<mat-progress-bar *ngIf="loading$ | async" mode="indeterminate" color="accent">
+</mat-progress-bar>
+<div class="user-list">
+  <div
+    *ngFor="let user of users$ | async"
+    class="user-card"
+    (click)="viewUserDetails(user.id)"
+    appHoverHighlight
+  >
+    <img [src]="user.avatar" alt="{{ user.first_name }} {{ user.last_name }}" />
+    <div>{{ user.first_name }} {{ user.last_name }}</div>
+  </div>
+</div>
+
+<div class="pagination-container">
+  <app-custom-pagination
+    [totalItems]="(totalUsers$ | async) || 0"
+    [itemsPerPage]="6"
+    [currentPage]="currentPage"
+    (pageChange)="onPageChange($event)"
+  ></app-custom-pagination>
+</div>

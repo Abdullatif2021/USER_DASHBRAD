@@ -1,0 +1,17 @@
+<header>
+  <mat-toolbar color="primary">
+    <span class="title">USER DASHBOARD</span>
+
+    <span class="spacer"></span>
+
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        (input)="onSearch($event)"
+        placeholder="Search..."
+      />
+      <button class="search-button">Go</button>
+    </div>
+  </mat-toolbar>
+</header>
